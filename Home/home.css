@@ -1,0 +1,136 @@
+:root {
+    --azul: #273D59;
+    --fondo: #211e1e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--fondo);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.conteiner {
+    width: 90%;
+    margin: auto;
+}
+
+header {
+    padding: 30px 0;
+}
+
+header .conteiner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logotype {
+    font-family: 'Bebas Neue', cursive;
+    font-weight: normal;
+    color: var(--azul);
+    font-size: 40px;
+}
+
+header nav a {
+    color: #AAA;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+header nav a:hover,
+header nav a.active {
+    color: #FFF;
+}
+
+/* ---------------------------Aqui termina header */
+
+/* ---------------------Aqui empieza la imagen del home */
+
+.movie-home {
+    font-size: 16px;
+    min-height: 40.62em;
+    color: #FFF;
+    background: url(../Public/Images/1920x1080.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    margin-bottom: 3.12em;
+    display: flex;
+    align-items: end;
+
+}
+
+.movie-home .conteiner {
+    margin: 0 auto;
+    margin-bottom: 6.25em;
+
+}
+
+.movie-home .tittle{
+    font-weight: 600;
+    font-size: 3.12em;
+    margin-bottom: 0.4em;
+
+}
+
+.movie-home .description {
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.75em;
+    max-width: 50%;
+    margin-bottom: 1.25em;
+}
+
+
+.movie-home .button {
+    background: rgba(0,0,0,0.5); 
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em 1.87em ;
+    color: #FFF;
+    margin-right: 1.25em;
+    cursor: pointer;
+    transition: .3s ease all;
+    font-size:  1.12em;
+}
+.movie-home .button:hover {
+    background: #FFF;
+    color: #000;
+
+} 
+
+.movie-home .button i{
+    margin-right: 1.25em;
+
+}
+
+
+
+/* -----------Media querys */
+
+@media screen and (max-width: 850px) {
+    header .logotype {
+        margin-bottom: 10px;
+        font-size: 30px;
+    }
+
+    header .conteiner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .movie-home {
+        font-size: 14px;
+    } 
+
+    .movie-home .description {
+        max-width: 100%;
+    }
+
+}
