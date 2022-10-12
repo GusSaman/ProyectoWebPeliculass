@@ -14,7 +14,7 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-.conteiner {
+.container {
     width: 90%;
     margin: auto;
 }
@@ -23,7 +23,7 @@ header {
     padding: 30px 0;
 }
 
-header .conteiner {
+header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -66,13 +66,13 @@ header nav a.active {
 
 }
 
-.movie-home .conteiner {
+.movie-home .container {
     margin: 0 auto;
     margin-bottom: 6.25em;
 
 }
 
-.movie-home .tittle{
+.movie-home .tittle {
     font-weight: 600;
     font-size: 3.12em;
     margin-bottom: 0.4em;
@@ -89,27 +89,138 @@ header nav a.active {
 
 
 .movie-home .button {
-    background: rgba(0,0,0,0.5); 
+    background: rgba(0, 0, 0, 0.5);
     border: none;
     border-radius: 0.31em;
-    padding: 0.93em 1.87em ;
+    padding: 0.93em 1.87em;
     color: #FFF;
     margin-right: 1.25em;
     cursor: pointer;
     transition: .3s ease all;
-    font-size:  1.12em;
+    font-size: 1.12em;
 }
+
 .movie-home .button:hover {
     background: #FFF;
     color: #000;
 
-} 
+}
 
-.movie-home .button i{
+.movie-home .button i {
     margin-right: 1.25em;
 
 }
 
+/* -------------------------contenedor del titulo y controles */
+
+.container-tittle-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.container-tittle-controls h3 {
+    color: #FFF;
+    font-size: 30px;
+
+}
+
+.container-tittle-controls .indicators button {
+    background: #FFF;
+    height: 3px;
+    width: 10px;
+    cursor: pointer;
+    border: none;
+    margin-right: 2px;
+}
+
+.container-tittle-controls .indicators button:hover,
+.container-tittle-controls .indicators button.activo {
+    background: red;
+}
+
+
+
+
+
+
+/* //--------------------Aqui empieza el carrusel */
+
+.recomended-movie {
+    margin-bottom: 70px;
+}
+
+.recomended-movie .container-principal {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+
+/* ------------------------------------AQUI EMPIEZAN FLECHAS */
+
+
+.recomended-movie .container-principal .left-arrow,
+.recomended-movie .container-principal .right-arrow {
+    position: absolute;
+    border: none;
+    background: rgba(0, 0, 0, 0.3);
+    font-size: 40px;
+    height: 50%;
+    top: calc(50% - 25%);
+    line-height: 40px;
+    width: 50px;
+    color: #FFF;
+    cursor: pointer;
+    z-index: 500;
+    transition: .2s ease all;
+}
+
+.recomended-movie .container-principal .left-arrow:hover,
+.recomended-movie .container-principal .right-arrow:hover {
+    background: rgba(0, 0, 0, 0.9);
+
+}
+
+.recomended-movie .container-principal .left-arrow {
+    left: 0;
+}
+
+.recomended-movie .container-principal .right-arrow {
+    right: 0;
+}
+
+/* ------------------------Para el carrusel */
+
+.recomended-movie .container-carrusel {
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.recomended-movie .container-carrusel .carrusel {
+    display: flex;
+    flex-wrap: nowrap;
+
+
+}
+
+.recomended-movie .container-carrusel .carrusel .movies {
+    min-width: 20%;
+    transition: .2s easy all;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.recomended-movie .container-carrusel .carrusel .movies img {
+    width: 100%;
+    vertical-align: top;
+}
+
+.recomended-movie .container-carrusel .carrusel .movies.hover {
+    transform: scale(1.2);
+    transform-origin: center;
+}
 
 
 /* -----------Media querys */
@@ -120,17 +231,35 @@ header nav a.active {
         font-size: 30px;
     }
 
-    header .conteiner {
+    header .container {
         flex-direction: column;
         text-align: center;
     }
 
     .movie-home {
         font-size: 14px;
-    } 
+    }
 
     .movie-home .description {
         max-width: 100%;
+    }
+
+
+    .recomended-movie .container-carrusel {
+        overflow: visible;
+    }
+
+    .recomended-movie .container-carrusel .carrusel {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+
+    }
+
+    .recomended-movie .indicators,
+    .recomended-movie .left-arrow,
+    .recomended-movie .right-arrow {
+        display: none;
     }
 
 }
