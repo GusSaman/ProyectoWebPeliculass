@@ -32,7 +32,7 @@ function CreateFunction() {
       genero: genero.value,
       imagen: imagen.value,
       trailer: trailer.value,
-      fav: true,
+      fav: false,
     });
     localStorage.setItem("Movies", JSON.stringify(Movies));
     (id = ""), (titulo.value = "");
@@ -72,7 +72,7 @@ function ReadFunction() {
           <td>
             <div class="icon-links">
                 ${
-                  getLocalStorage[index].fav === true
+                  getLocalStorage[index].fav === false
                     ? `<button href="#" class="like like-reg" onclick="upDateFav(${index})"><i class="fa-regular fa-heart"></i></button>`
                     : `<button href="#" class="like like-solid" onclick="upDateFav(${index})"><i class="fa-solid fa-heart"></i></button>`
                 }  
@@ -84,7 +84,7 @@ function ReadFunction() {
             </button>
           </td>
           <td class="accionar" >
-            <button onclick="DeleteNote(${index})">
+            <button onclick="DeleteMovie(${index})">
               <i class="fa-regular fa-trash-can"></i>
             </button>
           </td> 
@@ -107,6 +107,7 @@ let newTrailer = document.getElementById("newTrailer");
 
 let identifier;
 function viewNote(item) {
+  const Movies= JSON.parse(localStorage.getItem("Movies"))
   identifier = item;
   newTitulo.value= Movies[item].titulo;
   newSinopsis.value= Movies[item].sinopsis;
@@ -116,13 +117,15 @@ function viewNote(item) {
 }
 
 function UptdateNote() {
-  Movies.splice(identifier, 1, {
+ const Movies= JSON.parse(localStorage.getItem("Movies"))
+   Movies.splice(identifier, 1, { 
+    ...Movies[identifier],
     titulo: newTitulo.value,
     sinopsis: newTitulo.value,
     genero: newGenero.value,
     imagen: newImagen.value,
     trailer: newTrailer.value,
-  });
+  } );
   localStorage.setItem("Movies", JSON.stringify(Movies));
   ReadFunction();
 }
@@ -135,12 +138,22 @@ function DeleteFunction() {
 }
 
 //---------------DELETE MOVIE
-function DeleteNote(item) {
+function DeleteMovie(item) {
   Movies.splice(item, 1);
   localStorage.setItem("Movies", JSON.stringify(Movies));
   ReadFunction();
 }
 
+//---------------DELETE CONTENIDO DE EDICION
+function DeleteContent() {
+  titulo.value = "";
+  sinopsis.value = "";
+  genero.value = "";
+  imagen.value = "";
+  trailer.value = "";
+}
+
+//---------------BUG
 function Bug() {
   if (localStorage.getItem("Movies") !== null) {
     Movies = JSON.parse(localStorage.getItem("Movies"));
@@ -149,6 +162,8 @@ function Bug() {
 
 //---------------↓↓BUTTON FAV-------------
 function upDateFav(item) {
+  const Movies= JSON.parse(localStorage.getItem("Movies"))
+  console.log(Movies)
   Movies.splice(item, 1,
     { 
       ...Movies[item],
