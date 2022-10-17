@@ -17,14 +17,15 @@
     background-color: rgb(30, 13, 38);
 }
 
-h1{
+.ConteinerTitle{
 position: relative;
 left: 95%;
 bottom: 20%;
 background-color:rgb(30, 13, 38); 
 }
-input{
+.inputPage{
     width: 75%;
+    height: 40px;
     position: relative;
     left: 13%;
     top: 65%;
@@ -63,4 +64,24 @@ input{
     height: 8%;
     margin-left: 3%;
     background-color: rgb(30, 13, 38);;
+}
+.modal{
+    background-color:rgb(30, 13, 38) ;
+}
+.modal-body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color:rgb(50, 3, 56);;
+   
+}
+.InputModal{
+    background-color: white;
+    width: 50%;
+    height: 40%;
+    margin-bottom: 12px;
+    
+}
+TextModal{
+    background-color:rgb(30, 13, 38);;
 }

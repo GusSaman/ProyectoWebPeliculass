@@ -18,36 +18,69 @@
     <main>
         <section class="conteinerText">
             <!--Aqui comeinza el Iniciar sesion-->
-            <h1 class="text-light">Iniciar sesion</h1>
+            <h1 class="ConteinerTitle text-light">Iniciar sesion</h1>
 
             <section class="conteinerInfo">
                 <div class="conteinerInfo">
-                    <input type="text" name="NombreDeUsuario" id="conteinerUserName" class="input-group-text"
+                    <input type="text" name="NombreDeUsuario" id="conteinerUserName" class="inputPage bg-light rounded"
                         placeholder="Ingrese su nombre de usuario">
 
-                    <input type="password" name="Contraseña" id="" class="input-group-text"
+                    <input type="password" name="Contraseña" id="" class="inputPage bg-light rounded"
                         placeholder="Ingrese su contraseña">
-
+                    <!--Aqui empeiza el modal para registrarse-->
                     <button class="conteinerButton btn btn-outline-light">
                         Entrar
                     </button>
+
                 </div>
                 <section>
 
                     <div>
-                        <a href="" class="conteiner_a">Registrarme</a>
-                    </div class="conteinerInfo">
+                        <a href="" class="conteiner_a" data-bs-toggle="modal"
+                            data-bs-target="#Modal">Registrarme</a>
+
+                        <!--Modal-->
+
+                        <div class="modal fade rounded" id="Modal" tabindex="-1" aria-labelledby="ModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title text-light fs-5" id="ModalLabel">Registrarme</h1>
+                                        <button type="button" class="buttonCloseModal btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p class="TextModal text-light">Ingrese su nombre completo</p>
+                                        <input type="text" name="PersonName" id="NewPerson" class="InputModal rounded" placeholder="Juan perez">
+                                        <p class="TextModal text-light">Ingrese el nombre de usuario que le gustaria tener</p>
+                                        <input type="text" name="UserName" id="NewUser" class="InputModal rounded" placeholder="Juanito.P">
+                                        <p class="TextModal text-light">Ingrese su email</p>
+                                        <input type="email" name="UserMail" id="NewMail" class="InputModal rounded" placeholder="juanitoperez@gmail.com">
+                                        <p class="TextModal text-light">Ingrese su nueva contraseña</p>
+                                        <input type="password" name="UserPassword" id="NewPassword" class="InputModal rounded" placeholder="*****"> 
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary">Crear Cuenta</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
 
 
                     <div class="conteinerInfo" id="Options">
                         <p class="conteinerFormat text-light"> Iniciar sesion con:</p>
-                       <img src="https://rotulosmatesanz.com/wp-content/uploads/2017/09/2000px-Google_G_Logo.svg_.png"
+                        <img src="https://rotulosmatesanz.com/wp-content/uploads/2017/09/2000px-Google_G_Logo.svg_.png"
                             class="conteinerImgs rounded">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/2048px-Facebook_f_logo_%282019%29.svg.png"
                             class="conteinerImgs rounded">
                         <img src="https://logolook.net/wp-content/uploads/2021/06/Symbol-Twitter.png"
-                        class="conteinerImgs rounded">
- 
+                            class="conteinerImgs rounded">
+                        <!--Aqui termina el login -->
                 </section>
             </section>
 
