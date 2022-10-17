@@ -156,6 +156,7 @@ header nav a.active {
 /* //--------------------Aqui empieza el carrusel */
 
 .recomended-movie {
+    
     margin-bottom: 70px;
 }
 
@@ -227,10 +228,13 @@ header nav a.active {
     vertical-align: top;
 }
 
-.recomended-movie .container-carrusel .carrusel .movies.hover {
+.recomended-movie .container-carrusel .carrusel .movies:hover {
+   
     transform: scale(1.2);
     transform-origin: center;
 }
+
+
 
 /* //---------------------------CARDS CENTRALES */
 
@@ -268,15 +272,59 @@ header nav a.active {
 
 
 .card:hover .content{
+   
     opacity: 1;
+}
+
+#tittle-cards-centrales{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(18, 19, 19);
+    
+}
+
+.tittle-bigcards{
+    font-size: 3em;
+color: #FFF;
 }
 
 
 
+/* //--------------------------CARRUSEL DC */
 
 
+.recomended-movie .container-carruseldc {
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.recomended-movie .container-carruseldc .carrusel {
+    display: flex;
+    flex-wrap: nowrap;
 
 
+}
+
+.recomended-movie .container-carruseldc .carrusel .peliculas {
+    min-width: 20%;
+    transition: .2s easy all;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.recomended-movie .container-carruseldc .carrusel .peliculas img {
+    width: 100%;
+    vertical-align: top;
+}
+
+.recomended-movie .container-carruseldc .carrusel .peliculas:hover {
+   
+    transform: scale(1.2);
+    transform-origin: center;
+}
 
 
 

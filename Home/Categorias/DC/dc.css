@@ -85,6 +85,7 @@ header nav a.active {
 
 
 .card:hover .content{
+  
     opacity: 1;
 }
 

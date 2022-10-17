@@ -29,25 +29,6 @@ leftArrow.addEventListener('click', () => {
 });
 
 
-//------------------------Paginacion
-
-
-// const numeroPaginas = Math.ceil(movie.length / 5);
-// for (let i = 0; i < numeroPaginas; i++) {
-//     const indicators = document.createElement('button');
-
-//     if (i === 0) {
-//         indicators.classList.add('activo');
-//     }
-
-//     document.querySelector('.indicators').appendChild(indicators);
-//     indicators.addEventListener('click', (e) => {
-//         fila.scrollLeft = i * fila.offsetWidth;
-//         document.querySelector('.indicators .activo').classList.remove('activo');
-//         e.target.classList.add('activo');
-//     })
-// }
-
 
 //---------------------HOVER
 
@@ -65,3 +46,8 @@ movie.forEach((movies) => {
 fila.addEventListener('mouseleave', () => {
     movie.forEach(movies => movies.classList.remove('hover'));
 });
+
+//-----------------carrusel DC
+
+
+
