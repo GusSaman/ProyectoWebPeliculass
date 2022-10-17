@@ -108,9 +108,17 @@ header nav a.active {
 }
 
 .movie-home .button i {
+   
     margin-right: 1.25em;
+   
 
 }
+.movie-home .button a {
+    color: #FFF;
+    text-decoration: none;
+} 
+   
+
 
 /* -------------------------contenedor del titulo y controles */
 
