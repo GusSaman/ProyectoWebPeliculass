@@ -4,8 +4,10 @@ let genero = document.getElementById("Genero");
 let imagen = document.getElementById("Imagen");
 let trailer = document.getElementById("Trailer");
 let myPelis = document.getElementById("myPelis");
+let public = document.getElementById("checked");
+let newPublic = document.getElementById("newchecked");
 
-let Movies = [];
+let Movies = JSON.parse(localStorage.getItem("Movies")) || [];
 
 function Main() {
   ReadFunction();
@@ -26,23 +28,26 @@ function CreateFunction() {
       trailer.value > 0)
   ) {
     Movies.push({
-      id: Math.round(Math.random()*1000000),
+      id: Math.round(Math.random() * 1000000),
       titulo: titulo.value,
       sinopsis: sinopsis.value,
       genero: genero.value,
       imagen: imagen.value,
       trailer: trailer.value,
       fav: false,
+      // Quiero que arranque publicada ↓↓↓ por eso va true
+      public: public.checked,
     });
     localStorage.setItem("Movies", JSON.stringify(Movies));
-    (id = ""), (titulo.value = "");
+    titulo.value = "";
     sinopsis.value = "";
     genero.value = "";
     imagen.value = "";
     trailer.value = "";
+    public.checked = false;
   } else {
     Swal.fire({
-      title: "No ingresaste nada",
+      title: "No Completaste todos los campos",
       width: 350,
       padding: "1em",
       color: "#000",
@@ -55,7 +60,7 @@ function CreateFunction() {
   ReadFunction();
 }
 
-//---------------Funcion permite visualizar en pantalla
+//---------------Funcion visualizar en pantalla
 function ReadFunction() {
   let arrayPelis = [];
   let getLocalStorage = JSON.parse(localStorage.getItem("Movies"));
@@ -65,21 +70,24 @@ function ReadFunction() {
         <tr>  
           <th scope="row">${getLocalStorage[index].id}</th>  
           <td>${getLocalStorage[index].titulo}</td>
-          <td class="divSinopsis">${getLocalStorage[index].sinopsis}</td>
+          <td>${getLocalStorage[index].sinopsis}</td>
           <td>${getLocalStorage[index].genero}</td>
           <td>${getLocalStorage[index].imagen}</td>
           <td>${getLocalStorage[index].trailer}</td>
           <td>
+            <p>Publicado</p>
+          </td>
+          <td>
             <div class="icon-links">
                 ${
                   getLocalStorage[index].fav === false
-                    ? `<button href="#" class="like like-reg" onclick="upDateFav(${index})"><i class="fa-regular fa-heart"></i></button>`
-                    : `<button href="#" class="like like-solid" onclick="upDateFav(${index})"><i class="fa-solid fa-heart"></i></button>`
+                    ? `<button href="#" class="like like-reg" onclick="upDateFav(${getLocalStorage[index].id})"><i class="fa-regular fa-heart"></i></button>`
+                    : `<button href="#" class="like like-solid" onclick="upDateFav(${getLocalStorage[index].id})"><i class="fa-solid fa-heart"></i></button>`
                 }  
             </div>
           </td>                  
           <td class="accionar" >                       
-            <button data-bs-toggle="modal" data-bs-target="#staticBackdrop2" onclick="viewNote('${index}')">
+            <button data-bs-toggle="modal" data-bs-target="#staticBackdrop2" onclick="viewNote('${getLocalStorage[index].id}')">
             <i class="fa-regular fa-pen-to-square"></i>
             </button>
           </td>
@@ -107,25 +115,26 @@ let newTrailer = document.getElementById("newTrailer");
 
 let identifier;
 function viewNote(item) {
-  const Movies= JSON.parse(localStorage.getItem("Movies"))
-  identifier = item;
-  newTitulo.value= Movies[item].titulo;
-  newSinopsis.value= Movies[item].sinopsis;
-  newGenero.value= Movies[item].genero;
-  newImagen.value= Movies[item].imagen;
-  newTrailer.value= Movies[item].trailer;    
+  const Movies = JSON.parse(localStorage.getItem("Movies"));
+  identifier = Movies[item].id;
+  newTitulo.value = Movies[item].titulo;
+  newSinopsis.value = Movies[item].sinopsis;
+  newGenero.value = Movies[item].genero;
+  newImagen.value = Movies[item].imagen;
+  newTrailer.value = Movies[item].trailer;
+  newPublic.checked = Movies[item].public;
 }
 
 function UptdateNote() {
- const Movies= JSON.parse(localStorage.getItem("Movies"))
-   Movies.splice(identifier, 1, { 
+  const Movies = JSON.parse(localStorage.getItem("Movies"));
+  Movies.splice(identifier, 1, {
     ...Movies[identifier],
     titulo: newTitulo.value,
-    sinopsis: newTitulo.value,
+    sinopsis: newSinopsis.value,
     genero: newGenero.value,
     imagen: newImagen.value,
     trailer: newTrailer.value,
-  } );
+  });
   localStorage.setItem("Movies", JSON.stringify(Movies));
   ReadFunction();
 }
@@ -153,30 +162,47 @@ function DeleteContent() {
   trailer.value = "";
 }
 
-//---------------BUG
-function Bug() {
-  if (localStorage.getItem("Movies") !== null) {
-    Movies = JSON.parse(localStorage.getItem("Movies"));
-  }
-}
-
 //---------------↓↓BUTTON FAV-------------
-function upDateFav(item) {
-  const Movies= JSON.parse(localStorage.getItem("Movies"))
-  console.log(Movies)
-  Movies.splice(item, 1,
-    { 
-      ...Movies[item],
-      fav: !Movies[item].fav,
-    } 
-  );
-  localStorage.setItem("Movies", JSON.stringify(Movies));
+function upDateFav(id) {
+  let putMovies = [];
+  Movies.map((item) => {
+    if (item.id == id) {
+      putMovies.push({
+        ...item,
+        fav: true,
+      });
+    } else {
+      putMovies.push({
+        ...item,
+        fav: false,
+      });
+    }
+  });
+  localStorage.setItem("Movies", JSON.stringify(putMovies));
   ReadFunction();
-  // console.log(newItem);
-  // console.log(Movies[item]);
+  putMovies = [];
+}
+//---------------↓↓BUTTON check-------------
+function updatePublic() {
+  let publicMovies = [];
+  Movies.map((item) => {
+    console.log(item.id)
+    console.log(identifier)
+    if (item.id == identifier) {
+      publicMovies.push({
+        ...item,
+        public: !newPublic.checked,
+      });
+    } else {
+      publicMovies.push({
+        ...item,
+      });
+    }
+  });
+  localStorage.setItem("Movies", JSON.stringify(publicMovies));
+  ReadFunction();
+  // console.log(JSON.parse(localStorage.getItem("Movies")));
+  publicMovies = [];
 }
 
 Main();
-
-
-

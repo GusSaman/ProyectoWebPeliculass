@@ -1,0 +1,74 @@
+/* Aqui comienza navbar */
+header {
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-attachment: fixed;
+    background-color:#3300ff;
+     box-shadow: var(--shd, 0 0 10px rgba(0, 0, 0, .5));
+  }
+  
+  .navbar-content {
+    width: 80%;
+  }
+  
+  .img-navbar-brand {
+    width: 70px;
+  }
+  
+  .navbar-form {
+    border-radius: 0;
+    border: none;
+    background-color: white;
+  }
+  
+  .navbar-button {
+    border: solid 1px white;
+    border-radius: 0;
+    background-color: black;
+    padding: 7px;
+  }
+  
+  .navbar-button:hover {
+    background-color: rgb(71, 70, 70);
+  }
+  
+  .search-icon {
+    width: 25px;
+  }
+  
+
+  /* Fin de CSS de navbar  */
+  
+  .imgportada{
+    width: 100%;
+    height: 550px;
+    /* background: url(https://i.pinimg.com/originals/c8/6d/27/c86d276a82e3a331e7a55f1c103bfe0d.jpg); */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+.imgMovie{
+    width: 200px;
+    height: 300px;
+}
+.cardImgMovie{
+    width: 200px;
+    transition: 500ms;
+}
+.cardImgMovie:hover{
+    transform: translate(12px, 1%);
+}
+
+@media (max-width: 991px){
+  .nav-item{
+    background-color: #7D6E83;
+    padding: 10px;
+    border: 1px solid grey;
+    /* margin-left: 5px; */
+  }
+
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>Home Page RollFlix</title>
+  </head>
+
+  <body>
+    <header class=" ">
+      <!-- Aqui empieza el código del navbar  -->
+      <nav
+        class="navbar-content navbar navbar-expand-lg navbar navbar-dark pt-3 pb-3"
+      >
+        <div class="container-fluid">
+          <div>
+            <img src="../main/universal.png" alt="" height="50px" />
+          </div>
+          <div class="text-center">
+            <h4 class="m-0">ROLLFLIX</h4>
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav position-absolute end-0 me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="./Admin/admin.html"
+                  >Admin</a
+                >
+              </li>
+              <button type="button" class="btn btn-dark" id="exitButton">
+                Cerrar Sesion
+              </button>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="Portada">
+      </section>
+
+
+      <div>
+        <h4>Ciencia Ficcion</h4>
+      </div>
+      <section
+        id="ficcionMovies"
+        class="d-flex flex-wrap justify-content-evenly"
+      ></section>
+      <hr>
+
+      <div>
+        <h4>Terror</h4>
+      </div>
+      <section
+        id="terrorMovies"
+        class="d-flex flex-wrap justify-content-evenly"
+      ></section>
+      <hr>
+
+      <div>
+        <h4>Comedia</h4>
+      </div>
+      <section
+        id="comedyMovies"
+        class="d-flex flex-wrap justify-content-evenly"
+      ></section>
+      <hr>
+
+      <div>
+        <h4>Musical</h4>
+      </div>
+      <section
+        id="musicalMovies"
+        class="d-flex flex-wrap justify-content-evenly"
+      ></section>
+      <hr>
+
+      <div>
+        <h4>Drama</h4>
+      </div>
+      <section
+        id="dramaMovies"
+        class="d-flex flex-wrap justify-content-evenly"
+      ></section>
+    </main>
+
+    <script src="./home1.js"></script>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
