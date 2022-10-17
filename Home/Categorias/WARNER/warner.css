@@ -87,3 +87,42 @@ header nav a.active {
 .card:hover .content{
     opacity: 1;
 }
+
+@media screen and (max-width: 850px) {
+    header .logotype {
+        margin-bottom: 10px;
+        font-size: 30px;
+    }
+
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .movie-home {
+        font-size: 14px;
+    }
+
+    .movie-home .description {
+        max-width: 100%;
+    }
+
+
+    .recomended-movie .container-carrusel {
+        overflow: visible;
+    }
+
+    .recomended-movie .container-carrusel .carrusel {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+
+    }
+
+    .recomended-movie .indicators,
+    .recomended-movie .left-arrow,
+    .recomended-movie .right-arrow {
+        display: none;
+    }
+
+}
