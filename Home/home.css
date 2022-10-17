@@ -1,6 +1,6 @@
 :root {
     --azul: #273D59;
-    --fondo: #211e1e;
+    --fondo: #1d1c40;
 }
 
 * {
@@ -9,7 +9,8 @@
     box-sizing: border-box;
 }
 
-body {
+body  {
+   
     background: var(--fondo);
     font-family: 'Open Sans', sans-serif;
 }
@@ -113,31 +114,31 @@ header nav a.active {
 
 /* -------------------------contenedor del titulo y controles */
 
-.container-tittle-controls {
+ .container-tittle-controls {
     display: flex;
     justify-content: space-between;
     align-items: end;
-}
+} 
 
-.container-tittle-controls h3 {
+.container-tittle-controls h4 {
     color: #FFF;
-    font-size: 30px;
+    font-size: 20px;
 
 }
 
-.container-tittle-controls .indicators button {
+/* .container-tittle-controls .indicators button {
     background: #FFF;
     height: 3px;
     width: 10px;
     cursor: pointer;
     border: none;
     margin-right: 2px;
-}
-
+} */
+/* 
 .container-tittle-controls .indicators button:hover,
 .container-tittle-controls .indicators button.activo {
     background: red;
-}
+} */
 
 
 
@@ -154,6 +155,7 @@ header nav a.active {
     display: flex;
     align-items: center;
     position: relative;
+
 }
 
 
@@ -221,6 +223,73 @@ header nav a.active {
     transform: scale(1.2);
     transform-origin: center;
 }
+
+/* //---------------------------CARDS CENTRALES */
+
+
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    min-height: 100vh;
+    background: var(--fondo);
+}
+
+.card {
+    margin: 60px;
+    width: 500px;
+    height: 500px;
+    border-radius: 5px;
+    background: var(--i);
+    background-size: cover;
+    box-shadow: 3px 5px 5px rgba(3, 32, 51, .8);
+    overflow: hidden ;
+}
+
+.button {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .4);
+    opacity: 0;
+    transition: .5s;
+}
+
+
+.card:hover .button {
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* -----------Media querys */
