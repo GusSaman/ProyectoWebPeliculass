@@ -1,0 +1,194 @@
+body{
+    background-color: rgb(8,28,34);
+    margin: 0;
+    padding: 0%;
+    height: 100vh;
+    
+    }
+    img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    
+    }
+    .container2 {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        gap: px;
+        align-items: center;
+        justify-content: center;
+        margin-top: -280px;
+        background-color: rgb(0, 0, 0);
+        font-family: 'Black Ops One';
+      
+       
+    }
+    
+    
+    .container {
+        height: 100vh;
+        
+        display: flex;
+        flex-direction: column;
+        gap: px;
+        align-items: center;
+        justify-content: center;
+       margin-top: -130px;
+        background-color: rgb(0, 0, 0);
+    }
+     /* button{
+          top: 200%;
+        padding:  13px 30px;
+        border-radius: 15px;
+        border: none;
+        
+        color: white;
+        font-family: 'Frank Ruhl Libre', serif; 
+        background-image: linear-gradient(left     red, rgba(255, 255, 255,)); 
+    
+        
+    }  */
+    .btn-neon{
+        position: relative;
+        display: inline-block;
+        padding: 3px 10px;
+        color: #fff;
+        letter-spacing: 10px;
+        text-decoration: none;
+        font-size: 24px;
+        overflow: hidden;
+        transition: 0.2s;
+        background-color:  rgb(233, 188, 254);
+        border-radius: 45px;
+        box-shadow: 0 0 50px #273eeb, 0 0 150px #054793, 0 0 150px #720432;
+        
+    
+    }
+    .btn-neon:hover{
+        background: #a945c7;
+        box-shadow: 0 0 500px #a88ab1, 0 0 150px #a945c7, 0 0 150px #a945c7;
+        transition-delay: 0 1s;
+        border-radius: 45px;
+     }
+     .btn-neon button{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+     }
+     @media screen and (min-width: 150px) and (max-width: 480px){
+        .container {
+            width: 100%;
+            height: 45%;
+            margin-top: -45px;
+            
+            }
+            H1{
+                font-size: 90%;
+               width: auto;
+            }
+            P{
+                font-size: 100%;
+                letter-spacing: -1PX; 
+               
+            }
+            .container2 {
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+               
+                align-items: center;
+                justify-content: center;
+                margin-top: -280px;
+                background-color: rgb(0, 0, 0);
+                font-family: 'Black Ops One';
+              padding: 5%;
+            }
+    
+        }
+     
+    @media screen and (max-width: 500px){
+        .container {
+            width: 100%;
+            height: 45%;
+            margin-top: -45px;
+            }
+            .container2 {
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                
+                align-items: center;
+                 justify-content: center; 
+                margin-top: -280px;
+                background-color: rgb(0, 0, 0);
+                font-family: 'Black Ops One';
+              padding: 5%;
+            }
+            .btn-neon{
+                position: relative;
+                display: inline-block;
+                padding: 3% 8%;
+                color: #fff;
+                letter-spacing: 5%;
+                text-decoration: none;
+                font-size: 100%;
+                overflow: hidden;
+                transition: 0.2s;
+                background-color:  rgb(145, 5, 5);
+                border-radius: 45px;
+                box-shadow: 0 0 50% #273eeb, 0 0 150% #9d2c28, 0 0 150% #f41515;
+            
+            }
+    } 
+    
+    @media screen and (min-width: 501px) and (max-width: 750px) {
+        .img {
+            width: 100%;
+            height: 100%;
+            display: block;}
+    
+        .container {
+            width: 100%;
+            height: 75%;
+            margin-top: -100px;
+            }
+            .container2 {
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                
+                align-items: center;
+                justify-content: center;
+                margin-top: -280px;
+                background-color: rgb(0, 0, 0);
+                font-family: 'Black Ops One';
+              padding: 2px;
+            }
+        }
+        @media screen and (min-width: 750px)  {
+            .img {
+                width: 100%;
+                height: 100%;
+                display: block;}
+        
+            .container {
+                width: 100%;
+                height: 75%;
+                margin-top: -100px;
+                }
+                .container2 {
+                    height: 100vh;
+                    display: flex;
+                    flex-direction: column;
+                    
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: -220px;
+                    background-color: rgb(0, 0, 0);
+                    font-family: 'Black Ops One';
+                  padding: 2px;
+                }
+            }
