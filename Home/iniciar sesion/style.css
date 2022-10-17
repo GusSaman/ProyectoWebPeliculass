@@ -12,21 +12,22 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-   width: 300%;
-   height: 550px;
+   width: 165%;
+   height: 400px;
     background-color: rgb(30, 13, 38);
 }
 
 h1{
 position: relative;
-left: 103%;
+left: 95%;
 bottom: 20%;
+background-color:rgb(30, 13, 38); 
 }
 input{
     width: 75%;
     position: relative;
     left: 13%;
-    bottom: 18%;
+    top: 65%;
 
 }
 #conteinerUserName{
@@ -36,19 +37,30 @@ input{
     width: 75%;
     position: relative;
     left: 13%;
-    bottom: 15%;
+   top: 65%;
     margin-top: 10%;
 }
 .conteiner_a{
-    position: relative;
-    left: 220%;
-    top: 90%;
+    position: absolute;
+    left: 205%;
+    top: 85%;
+    background-color:rgb(30, 13, 38);  
 }
-a{
+.conteinerFormat{
     display: flex;
-    justify-content: end;
-    background-color: rgb(30, 13, 38); ;
-    margin-right: 13%;
+    justify-content: start;
+    background-color: rgb(30, 13, 38); 
    
-   
+}
+#Options{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: flex-end;
+}
+.conteinerImgs{
+    width: 6%;
+    height: 8%;
+    margin-left: 3%;
+    background-color: rgb(30, 13, 38);;
 }
