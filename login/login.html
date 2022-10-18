@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesion</title>
+    <link rel="stylesheet" href="/login/login.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <main>
+        <section class="conteinerText">
+            <!--Aqui comeinza el Iniciar sesion
+            <h1 class="ConteinerTitle text-light">Iniciar sesion</h1>-->
+
+            <section class="conteinerAll">
+                <!--NUEVO LOGIN :P-->
+
+                <form class="ConteinerForm border-1 border-light rounded">
+                    <div class="ConteinerTitle">
+                        <h1 class="Title text-light">Iniciar sesion</h1>
+                    </div>
+                    <div class="ConteinerInputs">
+                        <div class="ConteinerInputGeneral mb-3">
+                            <label for="exampleInputEmail1" class="ConteinerInputGeneral form-label text-light">Ingrese
+                                su mail</label>
+                            <input type="mail" class="ConteinerInput General form-control" id="correoInicioSesion"
+                                aria-describedby="emailHelp">
+                        </div>
+                        <div class="ConteinerInputGeneral mb-3">
+                            <label for="exampleInputPassword1"
+                                class="ConteinerInputGeneral form-label text-light">Ingrese su contraseña</label>
+                            <input type="password" class="ConteinerInputGeneral form-control"
+                                id="contrasenaInicioSesion">
+                        </div>
+                    </div>
+                    <div class="ConteinerButton">
+                        <button type="submit" class="btn btn-outline-light" id="botonInicioSesion">Entrar</button>
+                    </div>
+                    <div>
+                        <div class="conteiner_a">
+                            <a href="" class="Title" data-bs-toggle="modal"
+                                data-bs-target="#Modal">Registrarme</a>
+                        </div>
+                        <!--Modal-->
+
+                        <div class="modal fade rounded" id="Modal" tabindex="-1" aria-labelledby="ModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title text-light fs-5 mt-5" id="ModalLabel">Registrarme</h1>
+                                        <button type="button" class="buttonCloseModal btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p class="TextModal text-light">Ingrese su nombre completo</p>
+                                        <input type="text" name="PersonName" id="nombreRegistro" class="InputModal rounded" placeholder="Juan perez">
+                                        <p class="TextModal text-light">Ingrese el nombre de usuario que le gustariatener</p>
+                                        <input type="text" name="UserName" id="nombreUsuarioRegistro" class="InputModal rounded" placeholder="Juanito.P">
+                                        <p class="TextModal text-light">Ingrese su email</p>
+                                        <input type="email" name="UserMail" id="correoRegistro" class="InputModal rounded" placeholder="juanitoperez@gmail.com">
+                                        <p class="TextModal text-light">Ingrese su nueva contraseña</p>
+                                        <input type="password" name="UserPassword" id="constrasenaRegistro"class="InputModal rounded" placeholder="*****">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-outline-dark" 
+                                            data-bs-dismiss="modal">Cerrar</button>
+                                        <button type="button" id="botonRegistro" class="btn btn-success">Crear Cuenta</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Title">
+                            <p class="Title text-light"> Iniciar sesion con:</p>
+                            <img src="https://rotulosmatesanz.com/wp-content/uploads/2017/09/2000px-Google_G_Logo.svg_.png"class="conteinerImgs rounded">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/2048px-Facebook_f_logo_%282019%29.svg.png" class="conteinerImgs rounded">
+                            <img src="https://logolook.net/wp-content/uploads/2021/06/Symbol-Twitter.png" id="conteinerTwitter">
+                        </div>
+                    </div>
+                   
+                </form>
+
+
+
+
+
+            </section>
+
+
+
+        </section>
+
+
+    </main>
+
+
+        <footer></footer>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="/login/login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+* {
+
+    padding: 0%;
+    background-color: rgb(50, 3, 56);
+
+}
+.conteinerAll{
+    display: flex;
+    justify-content: center;
+}
+.ConteinerForm{
+    width: 50%;
+    height: 500px;
+    background-color: rgb(30, 13, 38);
+}
+.ConteinerTitle{
+    display: flex;
+    justify-content: center;
+    background-color:rgb(30, 13, 38);  ;
+}
+.Title{
+    background-color: rgb(30, 13, 38); 
+
+    
+}
+.ConteinerInputGeneral{
+background-color:rgb(30, 13, 38); ;
+}
+.ConteinerButton{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(30, 13, 38);
+}
+.conteiner_a{
+    display: flex;
+    justify-content: end;
+    background-color: rgb(30, 13, 38);
+    margin-top: 20px;
+}
+
+.conteinerImgs{
+width: 60px;
+height: 60px;
+background-color: rgb(30, 13, 38); 
+}
+#conteinerTwitter{
+    width: 100px;
+    height: 60px;
+    background-color: rgb(30, 13, 38); 
+}
+
+
+.InputModal {
+    background-color: white;
+    width: 50%;
+    height: 40%;
+    margin-bottom: 12px;
+
+}
+.modal {
+    background-color: rgb(30, 13, 38);
+}
+
+
+
