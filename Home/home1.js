@@ -21,7 +21,7 @@ createPortada()
 //-----Agregado de Cards en cada Carrucel
 let ficcionMovies = document.getElementById("ficcionMovies");
 let terrorMovies = document.getElementById("terrorMovies");
-let comediaMovies = document.getElementById("comedyMovies");
+let comediaMovies = document.getElementById("comediaMovies");
 let musicalMovies = document.getElementById("musicalMovies");
 let dramaMovies = document.getElementById("dramaMovies");
 
@@ -103,7 +103,6 @@ function comediaFunction() {
 comediaFunction()
 
 
-
 function musicalFunction() {
     Movies = JSON.parse(localStorage.getItem('Movies')) || [];
     let musicalGenero=[]
@@ -128,7 +127,6 @@ function musicalFunction() {
     })
 }
 musicalFunction()
-
 
 
 function dramaFunction() {
