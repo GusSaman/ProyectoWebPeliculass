@@ -5,7 +5,7 @@ let imagen = document.getElementById("Imagen");
 let trailer = document.getElementById("Trailer");
 let myPelis = document.getElementById("myPelis");
 let public = document.getElementById("checked");
-// let newPublic = document.getElementById("newchecked");
+let newPublic = document.getElementById("newchecked");
 
 let Movies = JSON.parse(localStorage.getItem("Movies")) || [];
 
@@ -36,7 +36,7 @@ function CreateFunction() {
       trailer: trailer.value,
       fav: false,
       // Quiero que arranque publicada ↓↓↓ por eso va true
-      public: false,
+      public: public.checked,
     });
     localStorage.setItem("Movies", JSON.stringify(Movies));
     titulo.value = "";
@@ -44,7 +44,7 @@ function CreateFunction() {
     genero.value = "";
     imagen.value = "";
     trailer.value = "";
-    // public.checked = false;
+    public.checked = false;
   } else {
     Swal.fire({
       title: "No Completaste todos los campos",
@@ -64,10 +64,8 @@ function CreateFunction() {
 function ReadFunction() {
   let arrayPelis = [];
   let getLocalStorage = JSON.parse(localStorage.getItem("Movies"));
-  // console.log(getLocalStorage)
   if (getLocalStorage != null) {
     for (let index = 0; index < getLocalStorage.length; index++) {
-      // console.log(getLocalStorage[index].public)
       arrayPelis.push(`   
         <tr>  
           <th scope="row">${getLocalStorage[index].id}</th>  
@@ -77,10 +75,7 @@ function ReadFunction() {
           <td>${getLocalStorage[index].imagen}</td>
           <td>${getLocalStorage[index].trailer}</td>
           <td>
-            <div class="custom-control custom-switch form-group form-check my-1">
-              <input type="checkbox" class="custom-control-input" value="${getLocalStorage[index].id}" name="publicadaCheck" onchange="updatePublic()" ${getLocalStorage[index].public && "checked" }>
-              <label class="custom-control-label" for="publicadaCheck">-</label>
-            </div>
+          <p>${getLocalStorage[index].public ? "Publicado" : "No Publicado"}</p>
           </td>
           <td>
             <div class="icon-links">
@@ -141,7 +136,7 @@ function UptdateNote() {
         genero: newGenero.value,
         imagen: newImagen.value,
         trailer: newTrailer.value,
-        // public: newPublic.checked != item.public ? newPublic.checked : item.public,
+        public: newPublic.checked != item.public ? newPublic.checked : item.public,
       });
     } else {
       update.push({
@@ -191,18 +186,14 @@ function upDateFav(id) {
 }
 //---------------↓↓BUTTON check-------------
 function updatePublic() {
-  // console.log(event.target.value)  // value devuelve id
-  // console.log(event.target.checked) // cheched dvuelve true or false
   let publicMovies = [];
   Movies.map((item) => {
-    // console.log(item.id)
-    // console.log(event.target.value) 
-    // console.log(event.target.checked)
-    // console.log(identifier)
-    if (item.id == event.target.value) {
+    console.log(item.id)
+    console.log(identifier)
+    if (item.id == identifier) {
       publicMovies.push({
         ...item,
-        public: event.target.checked,
+        public: !newPublic.checked,
       });
     } else {
       publicMovies.push({
@@ -210,11 +201,10 @@ function updatePublic() {
       });
     }
   });
-  // console.log(publicMovies)
   localStorage.setItem("Movies", JSON.stringify(publicMovies));
-  // ReadFunction();
+  ReadFunction();
   // console.log(JSON.parse(localStorage.getItem("Movies")));
-  // publicMovies = [];
+  publicMovies = [];
 }
 
 Main();

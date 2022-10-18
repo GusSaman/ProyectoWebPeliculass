@@ -52,15 +52,15 @@ header {
 
 
 .imgMovie{
-    width: 200px;
-    height: 300px;
+    width: 300px;
+    height: 250px;
 }
 .cardImgMovie{
-    width: 200px;
+    width: 300px;
     transition: 500ms;
 }
 .cardImgMovie:hover{
-    transform: translate(12px, 1%);
+    transform:scale(1.04);
 }
 
 @media (max-width: 991px){
