@@ -1,128 +1,224 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="admin.css">
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-          <span>Administrador de Peliculas</span>
-          <button data-bs-toggle="modal" data-bs-target="#staticBackdrop1" onclick="" id="new">
-            Nueva Pelicula<i class="fa-thin fa-plus"></i>
-          </button>
-        </div>
-  
-        <div class="divTable">
-          <table class="table table-responsive">
-            <thead>
-              <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Titulo</th>
-                <th scope="col" class="divSinopsis">Sinopsis</th>
-                <th scope="col">Genero</th>
-                <th scope="col">Imagen</th>
-                <th scope="col">Trailer</th>
-                <th scope="col">Publicar</th>
-                <th scope="col">Destacada</th>
-                <th scope="col" class="accionar">Editar</th>
-                <th scope="col" class="accionar">Eliminar</th>
-              </tr>
-            </thead>
-            
-            <tbody id="myPelis">
-            </tbody>
 
-          </table>
-        </div>
-         <!-- Create Modal -->
-        <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-           <div class="modal-dialog">
-              <div class="modal-content">
-                  <div class="modal-header ">
-                      <h3 class="modal-title" id="staticBackdropLabel">Cargar pelicula</h3>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body text-center">
-                      <input type="text" class="form-control" id="Titulo" placeholder="Titulo" required> 
-                      <br>
-                      <textarea class="form-control" id="Sinopsis" rows="5" placeholder="Sinopsis" required></textarea>
-                      <br>
-                      <select class="form-control" id="Genero" required>
-                        <option value="" disabled selected>Genero</option>
-                        <option>CIENCIA FICCION</option>
-                        <option>TERROR</option>
-                        <option>COMEDIA</option>
-                        <option>MUSICAL</option>
-                        <option>DRAMA</option>
-                        <option>ROMANCE</option>
-                      </select>
-                      <br>
-                      <input type="text" class="form-control" id="Imagen" placeholder="Link de Portada" required>
-                      <br>
-                      <input type="text" class="form-control" id="Trailer" placeholder="Link del Trailer" required>
-                      <!-- <div class="custom-control custom-switch form-group form-check my-1">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="admin.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+
+
+<header>
+
+  <a href="#" class="logo">ROLLFLIX</a>
+  <nav>
+    <ul>
+      <li><a href="../Home/home.html">Inicio</a></li>
+      <li><a href="">Administrador</a></li>
+
+    </ul>
+  </nav>
+
+</header>
+
+
+
+
+<body>
+  <main>
+    <div class="container">
+      <div class="header">
+        <span>Administrador de Peliculas</span>
+        <button data-bs-toggle="modal" data-bs-target="#staticBackdrop1" onclick="" id="new">
+          Nueva Pelicula<i class="fa-thin fa-plus"></i>
+        </button>
+      </div>
+
+      <div class="divTable">
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Titulo</th>
+              <th scope="col" class="divSinopsis">Sinopsis</th>
+              <th scope="col">Genero</th>
+              <th scope="col">Imagen</th>
+              <th scope="col">Trailer</th>
+              <th scope="col">Publicar</th>
+              <th scope="col">Destacada</th>
+              <th scope="col" class="accionar">Editar</th>
+              <th scope="col" class="accionar">Eliminar</th>
+            </tr>
+          </thead>
+
+          <tbody id="myPelis">
+          </tbody>
+
+        </table>
+      </div>
+      <!-- Create Modal -->
+      <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header ">
+              <h3 class="modal-title" id="staticBackdropLabel">Cargar pelicula</h3>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+              <input type="text" class="form-control" id="Titulo" placeholder="Titulo" required>
+              <br>
+              <textarea class="form-control" id="Sinopsis" rows="5" placeholder="Sinopsis" required></textarea>
+              <br>
+              <select class="form-control" id="Genero" required>
+                <option value="" disabled selected>Genero</option>
+                <option>CIENCIA FICCION</option>
+                <option>TERROR</option>
+                <option>COMEDIA</option>
+                <option>MUSICAL</option>
+                <option>DRAMA</option>
+                <option>ROMANCE</option>
+              </select>
+              <br>
+              <input type="text" class="form-control" id="Imagen" placeholder="Link de Portada" required>
+              <br>
+              <input type="text" class="form-control" id="Trailer" placeholder="Link del Trailer" required>
+              <!-- <div class="custom-control custom-switch form-group form-check my-1">
                         <input type="checkbox" class="custom-control-input" name="publicadaCheck" id="checked">
                         <label class="custom-control-label" for="publicadaCheck">Publicado</label>
                       </div> -->
-                  </div>
-                  <div class="modal-footer d-flex justify-content-center">
-                      <button type="button" class="btn btn-dark" data-bs-dismiss="modal" onclick="CreateFunction()">Cargar Pelicula</button>
-                      <button type="button" class="btn btn-dark" onclick="DeleteContent()">Borrar contenido</button>
-                  </div>
-              </div>
-           </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <button type="button" class="btn btn-dark" data-bs-dismiss="modal" onclick="CreateFunction()">Cargar
+                Pelicula</button>
+              <button type="button" class="btn btn-dark" onclick="DeleteContent()">Borrar contenido</button>
+            </div>
+          </div>
         </div>
+      </div>
 
-          <!-- UPDATE Modal -->
-        <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-              <div class="modal-content">
-                  <div class="modal-header ">
-                      <h3 class="modal-title" id="staticBackdropLabel">Editar pelicula</h3>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body text-center">
-                      <input type="text" class="form-control" id="newTitulo" placeholder="Titulo" required> 
-                      <br>
-                      <textarea class="form-control" id="newSinopsis" rows="5" placeholder="Sinopsis" required></textarea>
-                      <br>
-                      <select class="form-control" id="newGenero" required>
-                        <option value="" disabled selected>Genero</option>
-                        <option>CIENCIA FICCION</option>
-                        <option>TERROR</option>
-                        <option>COMEDIA</option>
-                        <option>MUSICAL</option>
-                        <option>DRAMA</option>
-                        <option>ROMANCE</option>
-                      </select>
-                      <br>
-                      <input type="text" class="form-control" id="newImagen" placeholder="Link de Portada" required>
-                      <br>
-                      <input type="text" class="form-control" id="newTrailer" placeholder="Link del Trailer" required>
-                      <!-- <div class="custom-control custom-switch form-group form-check my-1">
+      <!-- UPDATE Modal -->
+      <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header ">
+              <h3 class="modal-title" id="staticBackdropLabel">Editar pelicula</h3>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+              <input type="text" class="form-control" id="newTitulo" placeholder="Titulo" required>
+              <br>
+              <textarea class="form-control" id="newSinopsis" rows="5" placeholder="Sinopsis" required></textarea>
+              <br>
+              <select class="form-control" id="newGenero" required>
+                <option value="" disabled selected>Genero</option>
+                <option>CIENCIA FICCION</option>
+                <option>TERROR</option>
+                <option>COMEDIA</option>
+                <option>MUSICAL</option>
+                <option>DRAMA</option>
+                <option>ROMANCE</option>
+              </select>
+              <br>
+              <input type="text" class="form-control" id="newImagen" placeholder="Link de Portada" required>
+              <br>
+              <input type="text" class="form-control" id="newTrailer" placeholder="Link del Trailer" required>
+              <!-- <div class="custom-control custom-switch form-group form-check my-1">
                         <input type="checkbox" class="custom-control-input" name="publicadaCheck" id="newchecked" onclick="updatePublic()">
                         <label class="custom-control-label" for="publicadaCheck">Publicado</label>
                       </div> -->
-                  </div>
-                  <div class="modal-footer d-flex justify-content-center">
-                      <button type="button" class="btn btn-dark" data-bs-dismiss="modal" onclick="UptdateNote()">Actualizar Pelicula</button>
-                      <button type="button" class="btn btn-dark" onclick="DeleteContent()">Borrar contenido</button>
-                  </div>
-              </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <button type="button" class="btn btn-dark" data-bs-dismiss="modal" onclick="UptdateNote()">Actualizar
+                Pelicula</button>
+              <button type="button" class="btn btn-dark" onclick="DeleteContent()">Borrar contenido</button>
+            </div>
           </div>
+        </div>
       </div>
 
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container__prefooter">
+      <hr>
+      <div class="box__footer1">
+        <div class="logo">
+          <h3>ROLLFLIX</h3>
+          <img src="" width="200px" alt="">
+        </div>
       </div>
-    <script src="https://kit.fontawesome.com/896899a457.js" crossorigin="anonymous"></script>
-    <script src="admin.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-     <!-- JavaScript Bundle with Popper -->
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    </div>
+
+    <div class="box__redes">
+      <div class="box__redes2">
+        <ul class="sociales">
+          <li> <a href="https://es-la.facebook.com/" target="_blank"> <img src="../Administrador/images/facebook.png"
+                width="40px" alt=""> </a>
+          </li>
+          <li> <a href="https://www.instagram.com/" target="_blank"> <img src="../Administrador/images/instagram.png"
+                width="40px" alt=""> </a>
+          </li>
+          <li> <a href="#" target="_blank"> <img src="../Administrador/images/whatsapp.png" width="40px" alt=""> </a> </li>
+          <li> <a href="https://twitter.com/" target="_blank"> <img src="images/gorjeo.png" width="40px"
+                alt=""> </a> </li>
+        </ul>
+      </div>
+
+    </div>
+
+
+    <hr>
+    <div class="box__copyright">
+
+      <p> Todos los derechos reservados. 2022 <b>Rollflix &copy;</b></p>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://kit.fontawesome.com/896899a457.js" crossorigin="anonymous"></script>
+  <script src="admin.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+
+
+
+
+
 </body>
+
+
 </html>
