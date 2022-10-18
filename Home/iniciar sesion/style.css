@@ -1,87 +1,65 @@
-*{
-    
+* {
+
     padding: 0%;
-    background-color:rgb(50, 3, 56)
+    background-color: rgb(50, 3, 56);
+
 }
-.conteinerText{
-   position: absolute;
-   left: 24%;
-   top: 6%;
-}
-.conteinerInfo{
+.conteinerAll{
     display: flex;
     justify-content: center;
-    flex-direction: column;
-   width: 165%;
-   height: 400px;
+}
+.ConteinerForm{
+    width: 50%;
+    height: 500px;
     background-color: rgb(30, 13, 38);
 }
-
 .ConteinerTitle{
-position: relative;
-left: 95%;
-bottom: 20%;
-background-color:rgb(30, 13, 38); 
+    display: flex;
+    justify-content: center;
+    background-color:rgb(30, 13, 38);  ;
 }
-.inputPage{
-    width: 75%;
-    height: 40px;
-    position: relative;
-    left: 13%;
-    top: 65%;
+.Title{
+    background-color: rgb(30, 13, 38); 
 
+    
 }
-#conteinerUserName{
-    margin-bottom: 10%;
+.ConteinerInputGeneral{
+background-color:rgb(30, 13, 38); ;
 }
-.conteinerButton{
-    width: 75%;
-    position: relative;
-    left: 13%;
-   top: 65%;
-    margin-top: 10%;
+.ConteinerButton{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(30, 13, 38);
 }
 .conteiner_a{
-    position: absolute;
-    left: 205%;
-    top: 85%;
-    background-color:rgb(30, 13, 38);  
-}
-.conteinerFormat{
     display: flex;
-    justify-content: start;
-    background-color: rgb(30, 13, 38); 
-   
+    justify-content: end;
+    background-color: rgb(30, 13, 38);
+    margin-top: 20px;
 }
-#Options{
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: flex-end;
-}
+
 .conteinerImgs{
-    width: 6%;
-    height: 8%;
-    margin-left: 3%;
-    background-color: rgb(30, 13, 38);;
+width: 60px;
+height: 60px;
+background-color: rgb(30, 13, 38); 
 }
-.modal{
-    background-color:rgb(30, 13, 38) ;
+#conteinerTwitter{
+    width: 100px;
+    height: 60px;
+    background-color: rgb(30, 13, 38); 
 }
-.modal-body{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color:rgb(50, 3, 56);;
-   
-}
-.InputModal{
+
+
+.InputModal {
     background-color: white;
     width: 50%;
     height: 40%;
     margin-bottom: 12px;
-    
+
 }
-TextModal{
-    background-color:rgb(30, 13, 38);;
+.modal {
+    background-color: rgb(30, 13, 38);
 }
+
+
+
