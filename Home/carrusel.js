@@ -3,6 +3,19 @@ const movie = document.querySelectorAll('.movies');
 
 const leftArrow = document.getElementById('leftArrow');
 const rightArrow = document.getElementById('rightArrow');
+const carru = document.querySelector('.container-carruDramas');
+const flechaIzquierda = document.getElementById('flecha-izquierda');
+const flechaDerecha = document.getElementById('flecha-derecha');
+
+const come = document.querySelector('.container-carruComedias');
+const derechaCome = document.getElementById('derechaCome');
+const izquierdaCome = document.getElementById('izquierdaCome');
+
+
+
+const ficcion = document.querySelector('.container-carruCiencia');
+const derechaFiccion = document.getElementById('derechaFiccion');
+const izquierdaFiccion = document.getElementById('izquierdaFiccion');
 
 window.addEventListener("scroll", function(){
     let header = document.querySelector("header");
@@ -51,6 +64,100 @@ movie.forEach((movies) => {
 fila.addEventListener('mouseleave', () => {
     movie.forEach(movies => movies.classList.remove('hover'));
 });
+
+//----------------header fijo
+
+window.addEventListener("scroll", function(){
+    let header = document.querySelector("header");
+    header.classList.toggle("abajo",window.scrollY>0);
+})
+
+
+//----------------------------------CARRUSEL DRAMAS
+
+// ------------------- Event Listener para la flecha derecha -------------
+
+flechaDerecha.addEventListener('click', () => {
+    carru.scrollLeft += carru.offsetWidth; 
+});
+
+// ------------------- Event Listener para la flecha izquierda -------------
+
+flechaIzquierda.addEventListener('click', () => {
+    carru.scrollLeft -= carru.offsetWidth;
+});
+
+
+//---------------------Carrusel Comedias
+
+// ------------------- Event Listener para la flecha derecha -------------
+
+derechaCome.addEventListener('click', () => {
+    come.scrollLeft += come.offsetWidth; 
+});
+
+// ------------------- Event Listener para la flecha izquierda -------------
+
+izquierdaCome.addEventListener('click', () => {
+    come.scrollLeft -= come.offsetWidth;
+});
+
+
+
+//----------------------------ficcion
+// ------------------- Event Listener para la flecha derecha -------------
+
+derechaFiccion.addEventListener('click', () => {
+    ficcion.scrollLeft += ficcion.offsetWidth;
+    
+});
+
+// ------------------- Event Listener para la flecha izquierda -------------
+
+izquierdaFiccion.addEventListener('click', () => {
+    ficcion.scrollLeft -= ficcion.offsetWidth;
+
+    
+    
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
